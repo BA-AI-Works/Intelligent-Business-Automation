@@ -1,2 +1,2 @@
 # Intelligent-Business-Processes
-A library for Agent-powered business process automation
+A library for Agentic Workflows
