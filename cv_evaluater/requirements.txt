@@ -1,0 +1,5 @@
+langchain
+langchain-core
+openai  # For DeepSeek R1 compatibility
+python-dotenv
+typing-extensions

@@ -1,0 +1,116 @@
+ LangGraph Workflow Explanation
+
+This script implements a LangGraph-based workflow for evaluating candidate CVs against a job description using an LLM (Ollama with the “llama3.2:latest” model). The workflow consists of multiple steps, each responsible for different tasks, such as reading the job description, retrieving CVs, evaluating them, and generating an email for the best-matching candidate.
+
+	1.	The Start node connects to the Job Description node.
+	2.	The Job Description node connects to the Retrieving CVs node. At this step, we gather the necessary data for evaluation.
+	3.	The Retrieving CVs node connects to the Evaluate node, where the LLM evaluates each CV based on the job description and assigns a score.
+	4.	The Evaluate node connects to the Generate Email node. Based on the evaluation, this step creates an email to notify the selected candidate.
+	5.	Finally, the Generate Email node connects to the End node, completing the process.
+
+This structured workflow ensures an efficient and automated evaluation of CVs, leading to the selection of the most suitable candidate.     
+
+ Components
+
+ 1. LLM Initialization
+
+llm = Ollama(model="llama3.2:latest", base_url="http://localhost:11434") 
+
+ 2. State Management
+
+class State(TypedDict):
+    messages: Dict[str, str]
+    best_cv: str
+    best_score: int
+
+- Defines a State class to manage the workflow's state across different nodes.
+
+
+
+- Stores key information such as messages, the best-scoring CV, and its score.
+
+ 3. Utility Function
+
+def read_file(file_path):
+    with open(file_path, "r") as f:
+        return f.read()
+
+- A helper function to read text files, used to load the job description and CVs.
+
+ Workflow Steps
+
+   Step 1: Get Job Description
+
+def get_job_description(state: State):
+
+- Reads the job description from data/job_description.txt and updates the state.
+
+  Step 2: Retrieve CV List
+
+def get_cv_list(state: State):
+
+- Reads available CV files (limited to 2 for performance reasons) from data/cv/ and updates the state.
+
+   Step 3: Evaluate CVs
+
+def evaluate_cv(state: State):
+
+- Uses the LLM to compare CVs against the job description.
+
+- Each CV receives a score between 0-100 based on relevance.
+
+- The best-matching CV and score are stored in the state.
+
+  Step 4: Generate Email
+
+def generate_email(state: State):
+
+- If a suitable CV is found, generates an email using the LLM.
+
+- The email congratulates the candidate and provides next steps.
+
+ Graph Construction & Execution
+
+  1. Creating the Workflow
+
+workflow = StateGraph(State)
+
+  2. Adding Nodes
+
+workflow.add_node("get_job_description", get_job_description)
+workflow.add_node("get_cv_list", get_cv_list)
+workflow.add_node("evaluate_cv", evaluate_cv)
+workflow.add_node("generate_email", generate_email)
+
+  3. Defining Flow
+
+workflow.add_edge(START, "get_job_description")
+workflow.add_edge("get_job_description", "get_cv_list")
+workflow.add_edge("get_cv_list", "evaluate_cv")
+workflow.add_edge("evaluate_cv", "generate_email")
+workflow.add_edge("generate_email", END)
+ 
+  4. Executing the Workflow
+
+final_state = graph.invoke({
+    "messages": {
+        "cv_list": [],
+        "job_content": None,
+        "results": None,
+        "email": None,
+    },
+    "best_cv": "",
+    "best_score": 0,
+})
+
+- Starts the process with an initial state and executes all nodes sequentially.
+
+  Output & Results
+
+- After execution, the best CV and its score are displayed.
+
+- If a match is found, an email is generated and printed.
+
+ Conclusion
+
+This script efficiently automates the CV evaluation process by leveraging an LLM. The structured LangGraph workflow ensures a systematic progression from reading job details to contacting the best candidate.

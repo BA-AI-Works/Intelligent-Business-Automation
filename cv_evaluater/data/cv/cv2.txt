@@ -1,0 +1,44 @@
+John Doe
+https://github.com/johndoe | https://www.linkedin.com/in/johndoe | https://johndoe.medium.com | https://huggingface.co/johndoe
+
+PROFESSIONAL EXPERIENCE
+Google
+➢ Clients: Alphabet, Waymo, Google Cloud, DeepMind, YouTube
+
+Senior AI Engineer | Mountain View, USA
+07/2023 - Present
+
+Led the development of Google's Multi-Agent AI platform, optimizing LLM inference across TPU clusters.
+Designed and deployed GenAI-driven search enhancements, improving query efficiency by 30%.
+AI Engineer | Mountain View, USA
+01/2021 - 07/2023
+
+Built a scalable retrieval-augmented generation (RAG) system for Google Cloud AI.
+Reduced latency of real-time NLP applications by 40% using model distillation and LoRA.
+AI Research Intern | Mountain View, USA
+06/2020 - 12/2020
+
+Developed a novel deep reinforcement learning (RL) algorithm for autonomous web navigation.
+Published a research paper on multimodal AI architectures for human-AI interaction.
+EDUCATION
+Master of Science in Artificial Intelligence - Stanford University, USA
+09/2019 - 06/2021
+
+GPA: 4.0/4.0 | Thesis: "Scalable Large Language Models for Enterprise AI Solutions"
+Bachelor of Science in Computer Science - MIT, USA
+09/2015 - 06/2019
+
+GPA: 3.9/4.0 | Minor: Applied Mathematics
+LANGUAGES
+English (Native)
+Spanish (Fluent)
+French (Intermediate)
+SKILLS
+Programming: Python • C++ • Go • SQL
+AI Frameworks: TensorFlow • PyTorch • LangChain • Hugging Face
+Cloud Platforms: Google Cloud • AWS • Azure
+Other Tools: Kubernetes • Databricks • RAG • RLHF
+AWARDS & HONORS
+Google AI Research Fellowship (2021)
+Winner of the NeurIPS Reinforcement Learning Challenge (2020)
+Selected for MIT’s Top 10 Undergraduate Researchers (2019)

@@ -1,0 +1,20 @@
+MAIgents' Web Intelligence team develops cutting-edge AI-powered services that improve user experiences across MAIgents Search and MAIgents Navigator. Our mission is to deliver innovative solutions that save time, provide valuable insights, and drive user satisfaction in a secure online environment.
+
+**MAIgents Shop** is a dynamic platform that brings together products from various sellers, offering users a streamlined shopping experience. Through advanced AI technologies, MAIgents Shop delivers accurate search results, personalized recommendations, and valuable product insights like reviews and price trends.
+
+We are looking for a **Data & Applied Scientist II** to join our team and contribute to the development of algorithms, models, and insights that enhance our search and shopping capabilities. If you’re passionate about data and innovation, this is your opportunity to make a global impact.
+
+**Responsibilities**
+- Design and optimize algorithms to improve search results and recommendations.
+- Analyze large datasets to identify trends and build predictive models.
+- Collaborate with engineers and product managers to enhance platform performance.
+- Conduct experiments and A/B tests to evaluate and refine algorithms.
+- Present insights and recommendations to stakeholders.
+
+**Qualifications**
+- Bachelor’s degree in a related field and experience in data science or machine learning.
+- Proficiency in Python; familiarity with SQL and other tools is a plus.
+- Strong problem-solving skills and ability to work in a team-oriented environment.
+- Knowledge of A/B testing and recommendation systems is preferred.
+
+Join MAIgents and shape the future of online shopping!
